@@ -16,22 +16,9 @@
  * @returns {Array<Number>}
  */
 function twoSum(numbers, target) {
-    let result = [];
-
-    numbers.every(( element1, i ) => {
-
+    for (let i = 0; i < numbers.length; i++) {
         for (let j = i + 1; j < numbers.length; j++) {
-            const element2 = numbers[j];
-
-            if (element1 + element2 === target) {
-                result = [i, j]
-                break;
-            }
+            if (numbers[i] + numbers[j] === target) return [i, j];
         }
-
-        if ( result.length > 0 ) return false;
-        else return true;
-    });
-
-    return result;
+    }
 }

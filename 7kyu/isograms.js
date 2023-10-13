@@ -16,15 +16,5 @@
  * @returns {Boolean}
  */
 function isIsogram( word ) {
-    if ( word.includes(" ") ) throw new Error("Your word has spaces.");
-
-    return word
-            .toLowerCase()
-            .split("")
-            .every(( letter, _ , arr) => {
-                if ( arr.filter( e => e.includes(letter) ).length > 1 ) {
-                    return false;
-                }
-                return true;
-            });
+    return new Set( word.toLowerCase() ).size === word.length;
 }
